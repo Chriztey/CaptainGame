@@ -41,12 +41,16 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun CaptainGame(){
         val treasuresFound = remember { mutableStateOf(0) }
+        // another way of writing this : val treasuresFound by remeber {mutableStateOf(value : 0)}
+
         val direction = remember { mutableStateOf("North") }
         val stormOrTreasure = remember { mutableStateOf("") }
 
         Column {
 
             Text("Treasures Found: ${treasuresFound.value}")
+            // if using bu then u dont need to write .value, just $treasuresFound
+
             Text(text = "Current Direction: ${direction.value}")
             Text(text = stormOrTreasure.value)
 
